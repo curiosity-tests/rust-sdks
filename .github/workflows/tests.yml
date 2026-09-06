@@ -48,7 +48,7 @@ on:
 env:
   # The one variable that separates the arms: on baseline, action-checkout
   # skips its Set up Chalk step entirely.
-  CHALK_ON: ${{ github.event_name == 'workflow_dispatch' && inputs.leg != 'baseline' }}
+  CHALK_ON: ${{ inputs.leg == 'instrumented' }}
   CARGO_TERM_COLOR: always
   RUST_LOG: debug
   # sccache stores its cache in GitHub Actions' cache backend; both rustc and
